@@ -13,7 +13,7 @@
   直接运行可执行文件**CarRentalSystem.jar**，在主界面点击`Config`按钮，输入数据库名，用户名，密码及数据库URL（可选）进行数据库相关配置，`Confirm`提交修改，`Exit`回到主界面（每次打开需重新配置）
 
 * **方法二：**  
-  用IntelliJ IDEA打开程序源代码文件夹中**CarRentalSystem**工程，进入**Confi.Config**类，修改数据库配置变量，`control+R`编译运行程序
+  用IntelliJ IDEA打开程序源代码文件夹中**CarRentalSystem**工程，进入**Config.Config**类，修改数据库配置变量，`control+R`编译运行程序
   
 
 
