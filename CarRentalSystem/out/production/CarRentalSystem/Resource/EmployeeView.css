@@ -1,0 +1,60 @@
+/*.root {*/
+/*    -fx-background-image: url("picture/timg-4.jpeg");*/
+/*}*/
+
+/*HBox{*/
+/*    -fx-alignment: center;*/
+/*}*/
+
+.combo-box:hover {
+    -fx-background-color: #a30592;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-alignment: center;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: #a30592;
+    -fx-text-alignment: center;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #a30592;
+    -fx-text-alignment: center;
+}
+
+.button {
+    -fx-background-color: #a30592;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+.button:hover {
+    -fx-background-color: #d638b5;
+}
+
+#EmployeeWelCome_Label{
+    -fx-text-fill: #a30592;
+}
+
+/*#LeaseOptID_Input{*/
+/*    -fx-text-fill: rgba(53, 53, 53, 0.8);*/
+/*    -fx-border-color: rgba(53, 53, 53, 0.2);*/
+/*    -fx-border-radius: 5;*/
+/*}*/
+
+#EmployeeTip_Label{
+    -fx-text-fill: red;
+    -fx-font-weight: bolder;
+}
+
+
+.annotation {
+    -fx-text-fill: rgba(53, 53, 53, 0.56);
+}
+
+.HintLabel {
+    -fx-text-fill: #a30592;
+}

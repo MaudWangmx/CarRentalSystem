@@ -1,0 +1,50 @@
+/*.combo-box {*/
+/*    -fx-border-color: #000000;*/
+/*    -fx-border-width: 1;*/
+/*    -fx-background-radius: 0;*/
+/*    -fx-background-color:#F0F8FF;*/
+/*    -fx-font-family: "Arial bold";*/
+/*    -fx-font-size: 15px;*/
+/*    -fx-text-fill: #000000;*/
+/*    -fx-alignment: center;*/
+/*    -fx-content-display: center;*/
+/*}*/
+
+.root {
+    -fx-background-image: url("picture/timg-4.jpeg");
+}
+
+.combo-box:hover {
+    -fx-background-color: #a30592;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-alignment: center;
+}
+
+.button {
+    -fx-background-color: #a30592;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+
+.button:hover {
+    -fx-background-color: #d638b5;
+}
+
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: #a30592;
+    -fx-text-alignment: center;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #a30592;
+    -fx-text-alignment: center;
+}
+
+#RegisterTip_Label {
+    -fx-text-fill: red;
+}

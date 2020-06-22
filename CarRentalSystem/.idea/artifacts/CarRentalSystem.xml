@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="CarRentalSystem">
+    <output-path>$PROJECT_DIR$/out/artifacts/CarRentalSystem</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="CarRentalSystem" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="CarRentalSystem.jar">
+        <element id="module-output" name="CarRentalSystem" />
+      </element>
+      <element id="library" level="project" name="javafx-swt" />
+      <element id="file-copy" path="/Library/Java/Extensions/mysql-connector-java-8.0.20/mysql-connector-java-8.0.20.jar" />
+    </root>
+  </artifact>
+</component>

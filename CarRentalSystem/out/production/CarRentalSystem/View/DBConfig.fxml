@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="405.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DBConfigController">
+   <children>
+      <GridPane fx:id="Login_Pane" layoutX="10.0" layoutY="10.0" prefHeight="435.0" prefWidth="723.0" stylesheets="@/Resource/LoginView.css">
+         <children>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="436.0" text="DataBase Configuration" textFill="#a30592" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <TextField fx:id="DBURL_Input" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="470.0" promptText="URL(可不填）" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
+               <opaqueInsets>
+                  <Insets left="20.0" right="20.0" />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </TextField>
+            <Text fill="#a30592" strokeType="OUTSIDE" strokeWidth="0.0" text="URL: " wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#a30592" layoutX="81.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password: " wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="DBReset_Btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Reset" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="DBConfirm_Btn" layoutX="296.0" layoutY="310.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Confirm" textFill="#fffdfd" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextField fx:id="DBUserName_Input" layoutX="200.0" layoutY="153.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="470.0" promptText="UserName（必填）" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
+               <opaqueInsets>
+                  <Insets left="20.0" right="20.0" />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button fx:id="Exit_Btn" layoutX="296.0" layoutY="347.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Exit" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Text fill="#a30592" layoutX="110.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:" wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="DBPassword_Input" promptText="Password（必填）" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <Text fill="#a30592" layoutX="113.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DB_Name: " wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="DBName_Input" layoutX="203.0" layoutY="265.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="470.0" promptText="eg: car_rental（必填）" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6">
+               <opaqueInsets>
+                  <Insets left="20.0" right="20.0" />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="URLEg_Input" alignment="CENTER_RIGHT" layoutX="203.0" layoutY="218.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="15.0" prefWidth="723.0" text="eg: jdbc:mysql://127.0.0.1:3306/car_rental?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai" GridPane.columnSpan="5" GridPane.rowIndex="3">
+               <opaqueInsets>
+                  <Insets left="20.0" right="20.0" />
+               </opaqueInsets>
+            </TextField>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="169.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="176.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="164.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="105.05105590820312" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="39.948944091796875" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="0.0" prefHeight="25.4468994140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="46.53099060058594" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="49.8717041015625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="49.77655029296875" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="47.22344970703125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="440.0" prefWidth="741.0" stylesheets="@/Resource/EmployeeView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EmployeeController">
+   <children>
+      <GridPane prefHeight="440.0" prefWidth="741.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="141.7082977294922" minHeight="8.357503890991211" prefHeight="42.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="365.1750183105469" minHeight="10.0" prefHeight="362.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="741.0" GridPane.columnSpan="2">
+               <children>
+                  <Label fx:id="EmployeeWelCome_Label" prefHeight="27.0" prefWidth="657.0" text="拉开距离">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="EmployeeExit_Btn" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" text="Exit" textFill="#fffdfd">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TabPane fx:id="Employee_TabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+              <tabs>
+                  <Tab fx:id="CarInfo_Tab" text="Car">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutY="-2.0" prefHeight="332.0" prefWidth="740.0">
+                                 <children>
+                                    <TableView fx:id="CarInfo_Table" prefHeight="241.0" prefWidth="740.0" GridPane.rowIndex="1">
+                                       <columns>
+                                          <TableColumn fx:id="CarInfoCarID_Col" prefWidth="150.0" text="License Plate" />
+                                          <TableColumn fx:id="CarInfoBrand_Col" prefWidth="130.0" text="Brand" />
+                                          <TableColumn fx:id="CarInfoRent_Col" prefWidth="110.0" text="Rent" />
+                                          <TableColumn fx:id="CarInfoPledge_Col" prefWidth="110.0" text="Pledge" />
+                                          <TableColumn fx:id="CarInfoCondition_Col" prefWidth="120.0" text="Condition" />
+                                          <TableColumn fx:id="CarInfoStatus_Col" prefWidth="120.0" text="Status" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="740.0">
+                                       <children>
+                                          <Label text="CarID: ">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="CarInfoCarID_Input" prefWidth="100.0" />
+                                          <Label text="Brand: ">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="CarInfoBrand_Input" prefWidth="80.0" />
+                                          <Label text="Rent: ">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="CarInfoRentMin_Input" prefWidth="70.0" />
+                                          <Label text=" - " />
+                                          <TextField fx:id="CarInfoRentMax_Input" prefWidth="70.0" />
+                                          <Label text="Condition: ">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="CarInfoCondition_Combo" prefHeight="27.0" prefWidth="80.0" />
+                                          <Button fx:id="CarInfoSearch_Btn" mnemonicParsing="false" onMouseClicked="#onCarInfoSearchBtnClicked" text="Search">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="SwitchCarInfoCarID_Input" prefHeight="27.0" prefWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="SwitchCarInfoBrand_Input" prefHeight="27.0" prefWidth="130.0" />
+                                          <TextField fx:id="SwitchCarInfoRent_Input" prefWidth="110.0" />
+                                          <TextField fx:id="SwitchCarInfoPledge_Input" prefWidth="110.0" />
+                                          <TextField fx:id="SwitchCarInfoCondition_Input" prefWidth="120.0" />
+                                          <TextField fx:id="SwitchCarInfoStatus_Input" prefWidth="120.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Button fx:id="CarInfoAdd_Btn" mnemonicParsing="false" onMouseClicked="#onCarInfoAddBtnClicked" prefWidth="100.0" text="Add">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="CarInfoUpdate_Btn" mnemonicParsing="false" onMouseClicked="#onCarInfoUpdateBtnClicked" prefWidth="100.0" text="Update">
+                                             <HBox.margin>
+                                                <Insets left="55.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="CarInfoConfirm_Btn" mnemonicParsing="false" onMouseClicked="#onCarInfoConfirmBtnClicked" prefWidth="100.0" text="Confirm">
+                                             <HBox.margin>
+                                                <Insets left="55.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="CarInfoDelete_Btn" mnemonicParsing="false" onMouseClicked="#onCarInfoDeleteBtnClicked" prefWidth="100.0" text="Delete">
+                                             <HBox.margin>
+                                                <Insets left="55.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="CarInfoRepair_Btn" layoutX="436.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onCarInfoRepairBtnClicked" prefWidth="100.0" text="Repair">
+                                             <HBox.margin>
+                                                <Insets left="55.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="106.76664733886719" minHeight="0.0" prefHeight="42.875091552734375" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="277.4083709716797" minHeight="10.0" prefHeight="239.12490844726562" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="54.708282470703125" minHeight="10.0" prefHeight="32.6417236328125" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="54.708282470703125" minHeight="10.0" prefHeight="32.6417236328125" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                <Tab fx:id="ClientInfo_Tab" text="Client">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutY="-2.0" prefHeight="332.0" prefWidth="740.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="106.76664733886719" minHeight="0.0" prefHeight="42.875091552734375" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="277.4083709716797" minHeight="10.0" prefHeight="239.12490844726562" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="54.708282470703125" minHeight="10.0" prefHeight="32.6417236328125" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="54.708282470703125" minHeight="10.0" prefHeight="32.6417236328125" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="ClientInfo_Table" prefHeight="241.0" prefWidth="740.0" GridPane.rowIndex="1">
+                                      <columns>
+                                        <TableColumn fx:id="ClientInfoClientID_Col" prefWidth="75.0" text="ClientID" />
+                                        <TableColumn fx:id="ClientInfoName_Col" prefWidth="105.0" text="Name" />
+                                          <TableColumn fx:id="ClientInfoUserID_Col" prefWidth="75.0" text="UserID" />
+                                          <TableColumn fx:id="ClientInfoPassword_Col" prefWidth="130.0" text="Password" />
+                                          <TableColumn fx:id="ClientInfoCredit_Col" text="Credit" />
+                                          <TableColumn fx:id="ClientInfoIsVIP_Col" prefWidth="65.0" text="isVIP" />
+                                          <TableColumn fx:id="ClientInfoContact_Col" prefWidth="213.85787963867188" text="Contact" />
+                                      </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="740.0">
+                                       <children>
+                                          <Label text="Name: ">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="ClientInfoName_Input" prefWidth="120.0" />
+                                          <Label text="ClientID: ">
+                                             <HBox.margin>
+                                                <Insets left="60.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="ClientInfoClientID_Input" prefWidth="120.0" />
+                                          <Label text="Identity: ">
+                                             <HBox.margin>
+                                                <Insets left="60.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="ClientInfoIdentity_Combo" prefHeight="27.0" prefWidth="110.0" />
+                                          <Button fx:id="ClientInfoSearch_Btn" mnemonicParsing="false" onMouseClicked="#onClientInfoSearchBtnClicked" text="Search">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="SwitchClientInfoClientID_Input" prefHeight="27.0" prefWidth="79.0">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="SwitchClientInfoName_Input" prefHeight="27.0" prefWidth="105.0" />
+                                          <TextField fx:id="SwitchClientInfoUserID_Input" prefWidth="75.0" />
+                                          <TextField fx:id="SwitchClientInfoPassword_Input" prefWidth="130.0" />
+                                          <TextField fx:id="SwitchClientInfoCredit_Input" prefWidth="80.0" />
+                                          <TextField fx:id="SwitchClientInfoIsVIP_Input" prefWidth="65.0" />
+                                          <TextField fx:id="SwitchClientInfoContact_Input" prefWidth="213.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Button fx:id="ClientInfoAdd_Btn" mnemonicParsing="false" onMouseClicked="#onClientInfoAddBtnClicked" prefWidth="100.0" text="Add">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="ClientInfoUpdate_Btn" mnemonicParsing="false" onMouseClicked="#onClientInfoUpdateBtnClicked" prefWidth="100.0" text="Update">
+                                             <HBox.margin>
+                                                <Insets left="108.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="ClientInfoConfirm_Btn" mnemonicParsing="false" onMouseClicked="#onClientInfoConfirmBtnClicked" prefWidth="100.0" text="Confirm">
+                                             <HBox.margin>
+                                                <Insets left="108.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="ClientInfoDelete_Btn" mnemonicParsing="false" onMouseClicked="#onClientInfoDeleteBtnClicked" prefWidth="100.0" text="Delete">
+                                             <HBox.margin>
+                                                <Insets left="108.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="EmployeeInfo_Tab" text="Employee">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutY="-2.0" prefHeight="332.0" prefWidth="740.0">
+                                 <children>
+                                    <TableView fx:id="EmployeeInfo_Table" prefHeight="241.0" prefWidth="740.0" GridPane.rowIndex="1">
+                                       <columns>
+                                          <TableColumn fx:id="EmployeeInfoEmployeeID_Col" prefWidth="120.0" text="EmployeeID" />
+                                          <TableColumn fx:id="EmployeeInfoName_Col" prefWidth="140.0" text="Name" />
+                                          <TableColumn fx:id="EmployeeInfoUserID_Col" prefWidth="120.0" text="UserID" />
+                                          <TableColumn fx:id="EmployeeInfoPassword_Col" prefWidth="160.0" text="Password" />
+                                          <TableColumn fx:id="EmployeeInfoAge_Col" text="Age" />
+                                          <TableColumn fx:id="EmployeeInfoAuthority_Col" prefWidth="120.0" text="Authority" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="740.0">
+                                       <children>
+                                          <Label text="Name: ">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="EmployeeInfoName_Input" prefWidth="120.0" />
+                                          <Label text="EmployeeID: ">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="EmployeeInfoEmployeeID_Input" prefWidth="120.0" />
+                                          <Label text="Authority: ">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="EmployeeInfoAuthority_Combo" prefHeight="27.0" prefWidth="110.0" />
+                                          <Button fx:id="EmployeeInfoSearch_Btn" mnemonicParsing="false" onMouseClicked="#onEmployeeInfoSearchBtnClicked" text="Search">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="SwitchEmployeeInfoEmployeeID_Input" prefHeight="27.0" prefWidth="120.0">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="SwitchEmployeeInfoName_Input" prefHeight="27.0" prefWidth="140.0" />
+                                          <TextField fx:id="SwitchEmployeeInfoUserID_Input" prefWidth="120.0" />
+                                          <TextField fx:id="SwitchEmployeeInfoPassword_Input" prefWidth="160.0" />
+                                          <TextField fx:id="SwitchEmployeeInfoAge_Input" prefWidth="80.0" />
+                                          <TextField fx:id="SwitchEmployeeInfoAuthority_Input" prefWidth="120.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Button fx:id="EmployeeInfoAdd_Btn" mnemonicParsing="false" onMouseClicked="#onEmployeeInfoAddBtnClicked" prefWidth="100.0" text="Add">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="EmployeeInfoUpdate_Btn" mnemonicParsing="false" onMouseClicked="#onEmployeeInfoUpdateBtnClicked" prefWidth="100.0" text="Update">
+                                             <HBox.margin>
+                                                <Insets left="108.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="EmployeeInfoConfirm_Btn" mnemonicParsing="false" onMouseClicked="#onEmployeeInfoConfirmBtnClicked" prefWidth="100.0" text="Confirm">
+                                             <HBox.margin>
+                                                <Insets left="108.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="EmployeeInfoDelete_Btn" mnemonicParsing="false" onMouseClicked="#onEmployeeInfoDeleteBtnClicked" prefWidth="100.0" text="Delete">
+                                             <HBox.margin>
+                                                <Insets left="108.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="106.76664733886719" minHeight="0.0" prefHeight="42.875091552734375" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="277.4083709716797" minHeight="10.0" prefHeight="239.12490844726562" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="54.708282470703125" minHeight="10.0" prefHeight="32.6417236328125" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="54.708282470703125" minHeight="10.0" prefHeight="32.6417236328125" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="ActInfo_Tab" text="Activity Record">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutY="-2.0" prefHeight="332.0" prefWidth="740.0">
+                                 <children>
+                                    <TableView fx:id="ActInfo_Table" prefHeight="236.0" prefWidth="730.0" GridPane.rowIndex="2">
+                                       <columns>
+                                          <TableColumn fx:id="ActInfoDateTime_Col" prefWidth="160.0" text="DateTime" />
+                                          <TableColumn fx:id="ActInfoActID_Col" text="ActivityID" />
+                                          <TableColumn fx:id="ActInfoEvent_Col" text="EventType" />
+                                          <TableColumn fx:id="ActInfoCarID_Col" prefWidth="100.0" text="License Plate" />
+                                          <TableColumn fx:id="ActInfoOptID_Col" prefWidth="70.0" text="Operator ID" />
+                                          <TableColumn fx:id="ActInfoClientID_Col" prefWidth="70.0" text="Client ID" />
+                                          <TableColumn fx:id="ActInfoIncome_Col" prefWidth="90.0" text="Income" />
+                                          <TableColumn fx:id="ActInfoOutcome_Col" prefWidth="90.0" text="Outcome" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="740.0">
+                                       <children>
+                                          <Label text="Operator ID: ">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="ActInfoOptID_Input" prefWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin></TextField>
+                                          <Label text="ClientID: ">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="ActInfoClientID_Input" prefWidth="80.0" />
+                                          <Label layoutX="180.0" layoutY="22.0" text="License: ">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="ActInfoCarID_Input" layoutX="230.0" layoutY="17.0" prefWidth="80.0" />
+                                          <Label text="EventType: ">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="ActInfoEvent_Combo" prefHeight="27.0" prefWidth="110.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="StartTime: ">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <DatePicker fx:id="ActInfoStartDate_Picker" prefHeight="30.0" prefWidth="140.0" />
+                                          <Label text="EndTime: ">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <DatePicker fx:id="ActInfoEndDate_Picker" prefHeight="30.0" prefWidth="140.0" />
+                                          <CheckBox fx:id="ActInfoAllDate_CheckBox" mnemonicParsing="false" text="AllDate">
+                                             <HBox.margin>
+                                                <Insets left="15.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <CheckBox fx:id="ActInfoThisMonth_CheckBox" mnemonicParsing="false" text="ThisMonth">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <Button fx:id="ActInfoSearch_Btn" mnemonicParsing="false" onMouseClicked="#onActInfoSearchBtnClicked" text="Search">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="106.76664733886719" minHeight="0.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="106.76664733886719" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="277.4083709716797" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="TrafficFine_Tab" text="TrafficFine Upload">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane prefHeight="331.0" prefWidth="741.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="185.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="105.0" minHeight="2.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="License Plate: ">
+                                             <HBox.margin>
+                                                <Insets left="60.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TrafficFineCarID_Input" />
+                                          <Label text="Fine Amount: ">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TrafficFineAmount_Input" />
+                                          <Button fx:id="TrafficFineSearch_Btn" mnemonicParsing="false" onMouseClicked="#onTrafficFineSearchBtnClicked" prefHeight="27.0" prefWidth="79.0" text="Search">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Button fx:id="TrafficFineSubmit_Btn" mnemonicParsing="false" onMouseClicked="#onTrafficFineSubmitBtnClicked" prefHeight="39.0" prefWidth="98.0" text="Submit">
+                                             <HBox.margin>
+                                                <Insets right="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <GridPane GridPane.rowIndex="1">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="ClientID: ">
+                                                   <HBox.margin>
+                                                      <Insets left="120.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="TrafficFineClientID_Label" prefWidth="100.0">
+                                                   <HBox.margin>
+                                                      <Insets left="40.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label text="Client Name: ">
+                                                   <HBox.margin>
+                                                      <Insets left="100.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="TrafficFineClientName_Label" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="Lease ActivityID: ">
+                                                   <HBox.margin>
+                                                      <Insets left="120.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="TrafficFineActID_Label" prefWidth="100.0" />
+                                                <Label text="Lease Time: ">
+                                                   <HBox.margin>
+                                                      <Insets left="100.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="TrafficFineLeaseTime_Label" prefWidth="200.0">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Finance Report">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutX="1.0" layoutY="1.0" prefHeight="330.0" prefWidth="741.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="560.0" minWidth="10.0" prefWidth="547.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="194.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <GridPane GridPane.columnIndex="1">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="136.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="194.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="139.0" prefWidth="194.0">
+                                             <children>
+                                                <Button fx:id="FinanceYear_Btn" mnemonicParsing="false" onMouseClicked="#onFinanceYearBtnClicked" prefHeight="32.0" prefWidth="73.0" text="Year" />
+                                                <Button fx:id="FinanceSeason_Btn" mnemonicParsing="false" onMouseClicked="#onFinanceSeasonBtnClicked" prefHeight="32.0" prefWidth="73.0" text="Season">
+                                                   <VBox.margin>
+                                                      <Insets bottom="15.0" top="15.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="FinanceMonth_Btn" mnemonicParsing="false" onMouseClicked="#onFinanceMonthBtnClicked" prefHeight="32.0" prefWidth="73.0" text="Month" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="194.0">
+                                                   <children>
+                                                      <Label text="Income: ">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="FinanceIncome_Label" prefHeight="17.0" prefWidth="100.0" text="Label">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="194.0">
+                                                   <children>
+                                                      <Label text="OutCome: ">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="FinanceOutcome_Label" prefWidth="100.0" text="Label" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label text="Profit: ">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="FinanceProfit_Label" prefWidth="100.0" text="Label">
+                                                         <HBox.margin>
+                                                            <Insets left="25.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="BarChart">
+                                          <content>
+                                            <AnchorPane fx:id="Chart_Pane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          </content>
+                                        </Tab>
+                                        <Tab text="PieChart">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <PieChart fx:id="FinanceYear_PieChart" layoutX="70.0" layoutY="6.0" prefHeight="286.0" prefWidth="431.0" />
+                                                      <PieChart fx:id="FinanceSeason_PieChart" layoutX="70.0" layoutY="6.0" prefHeight="286.0" prefWidth="431.0" />
+                                                      <PieChart fx:id="FinanceMonth_PieChart" layoutX="70.0" layoutY="6.0" prefHeight="286.0" prefWidth="431.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="Rank">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <HBox layoutX="2.0" layoutY="1.0" prefHeight="296.0" prefWidth="545.0">
+                                                         <children>
+                                                            <VBox prefHeight="296.0" prefWidth="270.0">
+                                                               <children>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label prefHeight="28.0" prefWidth="150.0" text="Car Brand Leased Rank: ">
+                                                                           <HBox.margin>
+                                                                              <Insets left="10.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label fx:id="CarBrandRank_Label1" text="Label">
+                                                                           <HBox.margin>
+                                                                              <Insets left="40.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="270.0">
+                                                                     <children>
+                                                                        <Label fx:id="CarBrandRank_Label2" text="Label">
+                                                                           <padding>
+                                                                              <Insets left="40.0" />
+                                                                           </padding>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label fx:id="CarBrandRank_Label3" text="Label">
+                                                                           <padding>
+                                                                              <Insets left="40.0" />
+                                                                           </padding>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox prefHeight="296.0" prefWidth="270.0">
+                                                               <children>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label prefHeight="28.0" prefWidth="155.0" text="Client Consumption Rank: ">
+                                                                           <HBox.margin>
+                                                                              <Insets left="10.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="270.0">
+                                                                     <children>
+                                                                        <Label fx:id="ClientConsumption_Label1" text="Label">
+                                                                           <HBox.margin>
+                                                                              <Insets left="40.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label fx:id="ClientConsumption_Label2" text="Label">
+                                                                           <HBox.margin>
+                                                                              <Insets left="40.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label fx:id="ClientConsumption_Label3" text="Label">
+                                                                           <HBox.margin>
+                                                                              <Insets left="40.0" />
+                                                                           </HBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Backup &amp; Restore">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutX="2.0" prefHeight="330.0" prefWidth="735.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="532.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="362.0" minWidth="10.0" prefWidth="203.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="143.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="79.0" minHeight="7.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="123.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="DataChooseBackupFile_Btn" mnemonicParsing="false" text="Choose A Directory" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <TextField fx:id="DataBackupDir_Input">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="DataRestoreFile_Input" layoutX="10.0" layoutY="52.0" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="DataChooseRestoreFile_Btn" layoutX="542.0" layoutY="52.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="128.0" text="Choose a .sql File" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Button fx:id="DataBackup_Btn" layoutX="542.0" layoutY="52.0" mnemonicParsing="false" text="Backup" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="60.0" top="80.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button fx:id="DataRestore_Btn" layoutX="542.0" layoutY="121.0" mnemonicParsing="false" text="Restore" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="60.0" top="80.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Label fx:id="EmployeeTip_Label" prefHeight="27.0" prefWidth="709.0" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

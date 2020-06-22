@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <children>
+      <GridPane fx:id="Login_Pane" prefHeight="435.0" prefWidth="723.0" stylesheets="@/Resource/LoginView.css">
+         <children>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="436.0" text="Car Rental System" textFill="#a30592" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Account_Input" nodeOrientation="LEFT_TO_RIGHT" onInputMethodTextChanged="#onAccountInput" onMouseClicked="#onAccountInput" prefHeight="27.0" prefWidth="470.0" promptText="Account" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
+               <opaqueInsets>
+                  <Insets left="20.0" right="20.0" />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </TextField>
+            <Text fill="#a30592" strokeType="OUTSIDE" strokeWidth="0.0" text="ID：" wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#a30592" layoutX="81.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password：" wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="PW_Input" onInputMethodTextChanged="#onPasswordInput" onMouseClicked="#onPasswordInput" prefHeight="27.0" prefWidth="418.0" promptText="Password" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <Label fx:id="LoginStatus_Label" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="22.0" prefWidth="589.0" textFill="#7c7a7a" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" GridPane.valignment="TOP">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Text fill="#a30592" layoutX="110.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identity：" wrappingWidth="104.22900390625" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="Identity_ComboBox" prefHeight="27.0" prefWidth="444.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="Config_Btn" mnemonicParsing="false" onMouseClicked="#buttonExitClicked" prefHeight="40.0" prefWidth="120.0" text="Config" textFill="#fffdfd">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Login_Btn" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="40.0" prefWidth="120.0" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Register_Btn" mnemonicParsing="false" onMouseClicked="#Register" prefHeight="40.0" prefWidth="120.0" text="Register" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Exit_Btn" mnemonicParsing="false" onMouseClicked="#buttonExitClicked" prefHeight="40.0" prefWidth="120.0" text="Exit" textFill="#fffdfd">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="169.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="176.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="164.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>
