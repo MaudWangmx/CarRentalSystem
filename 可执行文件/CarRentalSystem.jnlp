@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CarRentalSystem.jar" size="749457" download="eager" />
+    <jar href="CarRentalSystem.jar" size="749489" download="eager" />
     <jar href="javafx-swt.jar" size="36804" download="eager" />
     <jar href="javafx.base.jar" size="749889" download="eager" />
     <jar href="javafx.controls.jar" size="2511079" download="eager" />

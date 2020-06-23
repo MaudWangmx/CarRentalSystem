@@ -79,8 +79,16 @@ public class DBConfigController {
             if (!DBURL_Input.getText().isEmpty())
                 Config.DB_URL = DBURL_Input.getText().trim();
             else
-                Config.DB_URL = "jdbc:mysql://127.0.0.1:3306/" + DBName_Input + "?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai";
+                Config.DB_URL = "jdbc:mysql://127.0.0.1:3306/" + DBName_Input.getText().trim() + "?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai";
 
+            Scene scene;
+            try {
+                scene = new Scene(FXMLLoader.load(getClass().getResource("/View/LoginView.fxml")));
+                scene.getStylesheets().add(getClass().getResource("/Resource/LoginView.css").toExternalForm());
+                Main.getStage().setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
     }
